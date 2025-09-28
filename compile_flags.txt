@@ -1,0 +1,5 @@
+-std=c++17
+-I/usr/include
+# Add other include paths for your C++ standard library here.
+# For example, you can find them with a command like:
+# find /usr/include -name "vector" -o -name "iostream"
