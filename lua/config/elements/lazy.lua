@@ -660,20 +660,20 @@ require('lazy').setup({
     -- change the command in the config to whatever the name of that colorscheme is.
     --
     -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
-    'folke/tokyonight.nvim',
+    'sainnhe/everforest',
     priority = 1000, -- Make sure to load this before all the other start plugins.
     config = function()
-      ---@diagnostic disable-next-line: missing-fields
-      require('tokyonight').setup {
-        styles = {
-          comments = { italic = false }, -- Disable italics in comments
-        },
-      }
+      -- Optional: Set the background contrast (hard, medium, soft)
+      vim.g.everforest_background = 'hard'
+      -- Optional: Enable italic comments
+      vim.g.everforest_enable_italic = 0
 
       -- Load the colorscheme here.
-      -- Like many other themes, this one has different styles, and you could load
-      -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-      vim.cmd.colorscheme 'tokyonight-night'
+      vim.cmd.colorscheme 'everforest'
+
+      -- Override the background color to match Sway config
+      vim.api.nvim_set_hl(0, 'Normal', { bg = '#213115' })
+      vim.api.nvim_set_hl(0, 'NormalFloat', { bg = '#213115' })
     end,
   },
 
